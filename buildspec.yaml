@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Running pre-build checks..."
+      - npm run lint # Or your preferred linter command
+      - npm audit # Optional: Checks for security vulnerabilities in your dependencies
+
+  install:
+    commands:
+      - echo "Installing Node.js dependencies..."
+      - npm install
+
+  build:
+    commands:
+      - echo "Building the React application..."
+      - npm run build # Or your build script in package.json
+
+  post_build:
+    commands:
+      - echo "Running post-build tasks..."
+      - npm test # Runs your unit and integration tests
+      - echo "Build completed successfully!"
+
+artifacts:
+  files:
+    - build/**/* # All files in the build directory
+  base-directory: 'build' # The base directory for the artifacts
