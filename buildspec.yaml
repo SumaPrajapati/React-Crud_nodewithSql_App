@@ -9,13 +9,26 @@ phases:
 
   install:
     commands:
-      - echo "Installing Node.js dependencies..."
-      - npm install
+      - echo "Installing server dependencies..."
+      - cd server
+      - npm ci
+      - cd ..
+      - echo "Installing client dependencies..."
+      - cd client
+      - npm ci
+      - cd ..
 
   build:
     commands:
-      - echo "Building the React application..."
-      - npm run build # Or your build script in package.json
+      - echo "Building client..."
+      - cd client
+      - npm run build
+      - cd ..
+      # If server has a build step:
+      - echo "Building server..."
+      - cd server
+      - npm run build || echo "No server build step, skipping"
+      - cd ..
 
   post_build:
     commands:
@@ -25,5 +38,5 @@ phases:
 
 artifacts:
   files:
-    - build/**/* # All files in the build directory
-  base-directory: 'build' # The base directory for the artifacts
+    - client/build/**/*   # client build
+    - server/**/*         # server app, if you want to package it too
