@@ -5,7 +5,7 @@ set -e
 echo "Validating service on port 8080..."
 
 # Adjust path if you have a specific health endpoint like /health
-curl -f http://localhost:8080/ || {
+curl -f http://localhost:8080/users || {
   echo "Health check failed on port 8080"
   exit 1
 }
