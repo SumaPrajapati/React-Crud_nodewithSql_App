@@ -4,14 +4,14 @@ os: linux
 files:
   # Deploy Node/Express server
   - source: server
-    destination: /var/www/react-crud-app/server
+    destination: /var/www/React-Crud_nodewithSql_App/server
 
   # Deploy built React client (from CodeBuild artifact)
   - source: client/build
-    destination: /var/www/react-crud-app/client
+    destination: /var/www/React-Crud_nodewithSql_App/client
 
 permissions:
-  - object: /var/www/react-crud-app
+  - object: /var/www/React-Crud_nodewithSql_App
     pattern: "**"
     owner: ec2-user        # change if you use a different user
     group: ec2-user
