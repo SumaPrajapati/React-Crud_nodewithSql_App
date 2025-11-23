@@ -2,6 +2,12 @@
 #!/bin/bash
 set -e
 
-# Simple health check on your API endpoint
-curl -f http://localhost:3000/ || exit 1
-echo "Service validation passed."
+echo "Validating service on port 8080..."
+
+# Adjust path if you have a specific health endpoint like /health
+curl -f http://localhost:8080/ || {
+  echo "Health check failed on port 8080"
+  exit 1
+}
+
+echo "Service validation passed on port 8080."
