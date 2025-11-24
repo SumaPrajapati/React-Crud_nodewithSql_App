@@ -13,8 +13,8 @@ files:
 permissions:
   - object: /var/www/React-Crud_nodewithSql_App
     pattern: "**"
-    owner: root        # change if you use a different user
-    group: root
+    owner: ec2-user        # change if you use a different user
+    group: ec2-user
     mode: 755
     type:
       - file
@@ -24,7 +24,7 @@ hooks:
   ApplicationStop:
     - location: scripts/stop_server.sh
       timeout: 60
-      runas: root
+      runas: ec2-user
 
   BeforeInstall:
     - location: scripts/clean_old.sh
@@ -34,14 +34,14 @@ hooks:
   AfterInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
-      runas: root
+      runas: ec2-user
 
   ApplicationStart:
     - location: scripts/start_server.sh
       timeout: 300
-      runas: root
+      runas: ec2-user
 
   ValidateService:
     - location: scripts/validate_service.sh
       timeout: 60
-      runas: root
+      runas: ec2-user
