@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-APP_DIR="/var/www/React-crud_nodewithsql_App"
+APP_DIR="/var/www/React-Crud_nodewithSql_App"
 
 echo "Running clean_old.sh as $(whoami)"
 mkdir -p "$APP_DIR"
