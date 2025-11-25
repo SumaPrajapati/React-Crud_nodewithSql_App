@@ -11,7 +11,7 @@ files:
     destination: /var/www/React-Crud_nodewithSql_App/client
 
 permissions:
-  - object: /var/www/React-crud_nodewithsql_App
+  - object: /var/www/React-Crud_nodewithSql_App
     pattern: "**"
     owner: ec2-user
     group: ec2-user
