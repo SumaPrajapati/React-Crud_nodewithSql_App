@@ -5,6 +5,8 @@ files:
     destination: /var/www/React-Crud_nodewithSql_App/client # Adjust this path based on your server setup
   - source: /
     destination: /var/www/React-Crud_nodewithSql_App/server
+  - source: /
+    destination: /var/www/React-Crud_nodewithSql_App/scripts
 hooks:
   ApplicationStop:
     - location: scripts/stop_application.sh
