@@ -46,8 +46,6 @@ phases:
 
 artifacts:
   files:
-    - appspec.yml
-    - scripts/**/*
-    - client/build/**/*
-    - server/**/*
+      - build/**/* # All files in the build directory
+  base-directory: 'build' # The base directory for the artifacts
    
