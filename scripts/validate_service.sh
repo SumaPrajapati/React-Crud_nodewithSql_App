@@ -1,4 +1,9 @@
 #!/bin/bash
-# Add commands to validate your application is running correctly
-# For example, curl a health check endpoint
-# curl -f http://localhost:3000/health || exit 1
+# Example validation: check if the app is listening on port 3000
+curl http://localhost:3000
+if [ $? -eq 0 ]; then
+  echo "Service is up and running."
+else
+  echo "Service validation failed."
+  exit 1
+fi
