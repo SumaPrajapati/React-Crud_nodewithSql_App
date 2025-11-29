@@ -2,29 +2,21 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/React-Crud_nodewithSql_App/client # Adjust this path based on your server setup
-  - source: /
-    destination: /var/www/React-Crud_nodewithSql_App/server
-  - source: /
-    destination: /var/www/React-Crud_nodewithSql_App/scripts
+    destination: /var/www/React-Crud_nodewithSql_App # Adjust the destination path as needed
 hooks:
-  ApplicationStop:
-    - location: stop_application.sh
-      timeout: 60
-      runas: root
   BeforeInstall:
-    - location: before_install.sh
+    - location: scripts/before_install.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: after_install.sh
+    - location: scripts/after_install.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: start_application.sh
-      timeout: 60
+    - location: scripts/application_start.sh
+      timeout: 300
       runas: root
   ValidateService:
-    - location: validate_service.sh
-      timeout: 60
+    - location: scripts/validate_service.sh
+      timeout: 300
       runas: root
