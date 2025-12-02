@@ -1,5 +1,7 @@
 version: 0.0
 os: linux
+file_exists_behavior: OVERWRITE
+
 files:
   - source: / # Copies everything from the root of my Github repo
     destination: /var/www/React-Crud_nodewithSql_App # The deployment path on EC2 instance
@@ -24,3 +26,4 @@ hooks:
     - location: scripts/validate_service.sh
       timeout: 60
       runas: root
+
