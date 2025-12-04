@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-APP_URL="http://localhost:3000"   # change if your server uses a different port or /health path
+APP_URL="http://localhost:8080"   # change if your server uses a different port or /health path
 
 echo "Validating service at $APP_URL ..."
 
