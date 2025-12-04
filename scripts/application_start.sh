@@ -2,7 +2,7 @@
 set -xe
 
 APP_DIR="/var/www/React-Crud_nodewithSql_App"
-NODE_BIN="/home/ubuntu/.nvm/versions/node/v12.22.12/bin/node"
+NODE_BIN="/home/ubuntu/.nvm/versions/node/v22.13.1/bin/node"
 
 cd "$APP_DIR/server"
 
