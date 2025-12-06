@@ -32,7 +32,7 @@ const AddComponent = () => {
             <div className="w-75 mx-auto shadow p-5">
                 <h1 className="mb-3 text-center"> User Add Form </h1>
                 <div className="mb-3">
-                    <button className="btn btn-outline-warning" onClick={handleBackclick}>Back to Home</button>
+                    <button className="btn btn-outline-warning" onClick={handleBackclick}>Back to Home Page</button>
                 </div>
                 <form>
                     <div className="mb-3">
